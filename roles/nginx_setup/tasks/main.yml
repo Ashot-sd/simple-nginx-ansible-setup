@@ -1,0 +1,11 @@
+---
+- name: Ensure nginx is installed
+  yum:
+    name: "nginx-{{ nginx_version }}"
+    state: present
+
+- name: Ensure nginx is running and enabled on boot
+  service:
+    name: nginx
+    state: started
+    enabled: yes
